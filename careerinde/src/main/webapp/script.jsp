@@ -1,0 +1,1 @@
+alert("Willkommen bei Careerinde!");
