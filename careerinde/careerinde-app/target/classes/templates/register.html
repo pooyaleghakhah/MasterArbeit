@@ -1,0 +1,210 @@
+    <title>Careerinde Register</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #ffffff;
+
+            color: #111111;
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .register-box {
+
+            width: 380px;
+
+            padding: 50px;
+
+            border: 1px solid #e5e5e5;
+
+            border-radius: 14px;
+
+            background: white;
+        }
+
+        .logo {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #666;
+
+            margin-bottom: 40px;
+
+            font-size: 14px;
+        }
+
+        .input-group {
+
+            margin-bottom: 20px;
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #dcdcdc;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+        input:focus {
+
+            border-color: black;
+        }
+
+        button {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: black;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+
+            transition: 0.2s;
+        }
+
+        button:hover {
+
+            opacity: 0.9;
+        }
+
+        .footer {
+
+            margin-top: 30px;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            color: #666;
+        }
+
+        .footer a {
+
+            color: black;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="register-box">
+
+    <div class="logo">
+        Careerinde
+    </div>
+
+    <div class="subtitle">
+        Start your Germany career journey
+    </div>
+
+    <form th:action="@{/register}"
+          th:object="${user}"
+          method="post">
+
+        <div class="input-group">
+
+            <label>Email</label>
+
+            <input type="email"
+                   th:field="*{email}"
+                   placeholder="Enter your email"
+                   required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Password</label>
+
+            <input type="password"
+                   th:field="*{password}"
+                   placeholder="Create your password"
+                   required>
+
+        </div>
+
+        <button type="submit">
+            Create Account
+        </button>
+
+    </form>
+
+    <div class="footer">
+
+        Already have an account?
+        <a href="/login">Login</a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

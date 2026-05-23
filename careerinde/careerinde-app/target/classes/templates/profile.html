@@ -1,0 +1,306 @@
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Careerinde Profile</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #f5f5f5;
+
+            color: #111;
+
+            padding: 50px;
+        }
+
+        .container {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            background: white;
+
+            border-radius: 16px;
+
+            padding: 50px;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .header {
+
+            margin-bottom: 40px;
+        }
+
+        .title {
+
+            font-size: 32px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+        .section-title {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-top: 40px;
+
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+
+            margin-bottom: 24px;
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: 600;
+
+            font-size: 14px;
+        }
+
+        input,
+        textarea,
+        select {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+
+            border-color: black;
+        }
+
+        textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        .row {
+
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .row .input-group {
+
+            flex: 1;
+        }
+
+        .save-btn {
+
+            margin-top: 30px;
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: black;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .save-btn:hover {
+
+            opacity: 0.9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="title">
+            Career Profile 🚀
+        </div>
+
+        <div class="subtitle">
+            Complete your profile for the German job market
+        </div>
+
+    </div>
+
+    <form>
+
+        <div class="section-title">
+            Personal Information
+        </div>
+
+        <div class="row">
+
+            <div class="input-group">
+
+                <label>First Name</label>
+
+                <input type="text"
+                       placeholder="Enter your first name">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Last Name</label>
+
+                <input type="text"
+                       placeholder="Enter your last name">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-group">
+
+                <label>Country</label>
+
+                <input type="text"
+                       placeholder="Country">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>City</label>
+
+                <input type="text"
+                       placeholder="City">
+
+            </div>
+
+        </div>
+
+        <div class="section-title">
+            Career Information
+        </div>
+
+        <div class="input-group">
+
+            <label>LinkedIn URL</label>
+
+            <input type="text"
+                   placeholder="https://linkedin.com/in/...">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>About Me</label>
+
+            <textarea placeholder="Tell us about yourself..."></textarea>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-group">
+
+                <label>German Level</label>
+
+                <select>
+
+                    <option>A1</option>
+                    <option>A2</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>English Level</label>
+
+                <select>
+
+                    <option>A1</option>
+                    <option>A2</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button class="save-btn" type="submit">
+            Save Profile
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
+```

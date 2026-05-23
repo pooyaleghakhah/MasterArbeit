@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Careerinde Dashboard</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+
+            width: 260px;
+
+            background: black;
+
+            color: white;
+
+            padding: 40px 25px;
+        }
+
+        .logo {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            margin-bottom: 50px;
+        }
+
+        .menu {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        .menu a {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+
+            background: #1f1f1f;
+        }
+
+        .main {
+
+            flex: 1;
+
+            padding: 40px;
+        }
+
+        .topbar {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 40px;
+        }
+
+        .welcome h1 {
+
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+
+            color: #666;
+        }
+
+        .logout-btn {
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: black;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+
+            margin-bottom: 40px;
+        }
+
+        .card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 16px;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .card-title {
+
+            color: #666;
+
+            margin-bottom: 12px;
+
+            font-size: 14px;
+        }
+
+        .card-value {
+
+            font-size: 34px;
+
+            font-weight: bold;
+        }
+
+        .section {
+
+            background: white;
+
+            border-radius: 16px;
+
+            padding: 35px;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+
+            margin-bottom: 20px;
+        }
+
+        .activity {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        .activity-item {
+
+            padding: 18px;
+
+            border: 1px solid #ececec;
+
+            border-radius: 12px;
+        }
+
+        .activity-title {
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .activity-text {
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <div class="logo">
+            Careerinde
+        </div>
+
+        <div class="menu">
+
+            <a href="/dashboard">Dashboard</a>
+
+            <a href="/profile">Profile</a>
+
+            <a href="/resume/upload">Upload CV</a>
+
+            <a href="#">Job Match</a>
+
+            <a href="#">Skill Gap</a>
+
+            <a href="#">Applications</a>
+
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <div class="welcome">
+
+                <h1>
+                    Welcome,
+                    <span th:text="${email}"></span>
+                    🚀
+                </h1>
+
+                <p>
+                    Your Germany Career Operating System
+                </p>
+
+            </div>
+
+            <form th:action="@{/logout}" method="post">
+
+                <button class="logout-btn" type="submit">
+                    Logout
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-title">
+                    CV Score
+                </div>
+
+                <div class="card-value">
+                    78%
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    Job Matches
+                </div>
+
+                <div class="card-value">
+                    12
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    Missing Skills
+                </div>
+
+                <div class="card-value">
+                    4
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    Applications
+                </div>
+
+                <div class="card-value">
+                    7
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <h2>
+                Recent Career Insights
+            </h2>
+
+            <div class="activity">
+
+                <div class="activity-item">
+
+                    <div class="activity-title">
+                        German B2 Recommended
+                    </div>
+
+                    <div class="activity-text">
+                        Most backend developer jobs in Germany require B2 German.
+                    </div>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <div class="activity-title">
+                        Docker Missing Skill
+                    </div>
+
+                    <div class="activity-text">
+                        Your target jobs frequently require Docker experience.
+                    </div>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <div class="activity-title">
+                        CV Optimization Available
+                    </div>
+
+                    <div class="activity-text">
+                        Improve your ATS score with AI recommendations.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
